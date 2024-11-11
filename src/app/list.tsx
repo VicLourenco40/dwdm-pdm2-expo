@@ -1,9 +1,9 @@
-import { View, Text } from "react-native";
+import { View, Text } from 'react-native';
 
 export default function List() {
-    return (
-        <View>
-            <Text>Example</Text>
-        </View>
-    )
+  return (
+    <View>
+      <Text>Example</Text>
+    </View>
+  )
 }
