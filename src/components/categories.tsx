@@ -3,19 +3,20 @@ import { categories } from '../data/categories';
 import { Category } from './category';
 
 type CategoriesProps = {
-  category: string,
-  setCategory: (title: string) => void
-}
+  selectedCategory: string;
+  setSelectedCategory: (title: string) => void;
+};
 
-export function Categories({category, setCategory}: CategoriesProps) {
+export function Categories({selectedCategory, setSelectedCategory}: CategoriesProps) {
   return (
     <FlatList
       data={categories}
       renderItem={({item}) => (
         <Category
           title={item.title}
-          isSelected={item.title === category}
-          onPress={() => setCategory(item.title)}
+          icon={item.icon}
+          isSelected={item.title === selectedCategory}
+          onPress={() => setSelectedCategory(item.title)}
         />
       )}
       style={styles.container}
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
     height: 52
   },
   content: {
-    paddingHorizontal: 24,
+    paddingHorizontal: 16,
     gap: 16
   }
 });

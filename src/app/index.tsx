@@ -47,7 +47,10 @@ export default function Index() {
           <Entypo name='plus' size={24} color='white' />
         </Pressable>
       </View>
-      <Categories category={selectedCategory} setCategory={setSelectedCategory} />
+      <Categories
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
       <FlatList
         keyExtractor={item => item.id.toString()}
         data={filteredItems}
